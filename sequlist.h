@@ -11,7 +11,7 @@ void InitList(SeqList &L){
 void input(SeqList &L){
     int x;
     InitList(L);
-    printf("请输入一组数据：\n");
+    printf("璇疯緭鍏ヤ竴缁勬暟鎹細\n");
     while(scanf("%d",&x)!=EOF){
         L.data[L.length++]=x;
         if (getchar() == '\n')
