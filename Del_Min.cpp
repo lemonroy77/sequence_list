@@ -1,5 +1,5 @@
-/*´ÓË³Ğò±íÖĞÉ¾³ı¾ßÓĞ×îĞ¡ÖµµÄÔªËØ(¼ÙÉèÎ¨Ò»)²¢ÓÉº¯Êı·µ»Ø±»É¾ÔªËØµÄÖµ¡£¿Õ³öµÄÎ»
-ÖÃÓÉ×îºóÒ»¸öÔªËØÌî²¹£¬ÈôË³Ğò±íÎª¿Õ£¬ÔòÏÔÊ¾³ö´íĞÅÏ¢²¢ÍË³öÔËĞĞ¡£*/
+/*ä»é¡ºåºè¡¨ä¸­åˆ é™¤å…·æœ‰æœ€å°å€¼çš„å…ƒç´ (å‡è®¾å”¯ä¸€)å¹¶ç”±å‡½æ•°è¿”å›è¢«åˆ å…ƒç´ çš„å€¼ã€‚ç©ºå‡ºçš„ä½
+ç½®ç”±æœ€åä¸€ä¸ªå…ƒç´ å¡«è¡¥ï¼Œè‹¥é¡ºåºè¡¨ä¸ºç©ºï¼Œåˆ™æ˜¾ç¤ºå‡ºé”™ä¿¡æ¯å¹¶é€€å‡ºè¿è¡Œã€‚*/
 #include <stdio.h>
 #include<stdlib.h>
 #define Maxsize 50
@@ -13,7 +13,7 @@ void InitList(SeqList& L) {
     L.data = (ElemType*)malloc(sizeof(ElemType) * Maxsize);
     L.length = 0;
 }
-bool ListInsert(SeqList &L, int i, int e){//²åÈë
+bool ListInsert(SeqList &L, int i, int e){//æ’å…¥
     if(i<1||i>L.length+1) return false;
     if(L.length>=Maxsize) return false;
     for(int j=L.length;j>=i;j--)
@@ -43,18 +43,17 @@ int main() {
     ListInsert(L, 1, 3);
     ListInsert(L, 1, 2);
     ListInsert(L, 1, 1);
-    // É¾³ı×îĞ¡Öµ
+    // åˆ é™¤æœ€å°å€¼
     ElemType minValue;
-    Del_Min(L, minValue);
     if(Del_Min(L, minValue)){
-    printf("É¾³ıµÄ×îĞ¡Öµ£º%d\n", minValue);
-    printf("É¾³ıºóµÄÏßĞÔ±í£º");
+    printf("åˆ é™¤çš„æœ€å°å€¼ï¼š%d\n", minValue);
+    printf("åˆ é™¤åçš„çº¿æ€§è¡¨ï¼š");
     for (int i = 0; i < L.length; i++) {
         printf("%d ", L.data[i]);
     }
     printf("\n");}
     else{
-        printf("ÏßĞÔ±íÎª¿Õ£¬ÎŞ·¨É¾³ı×îĞ¡Öµ¡£\n");
+        printf("çº¿æ€§è¡¨ä¸ºç©ºï¼Œæ— æ³•åˆ é™¤æœ€å°å€¼ã€‚\n");
     }
     return 0;
 }
