@@ -1,4 +1,4 @@
-/*从有序顺序表中删除所有其值重复的元素，使表中所有元素的值均不同*/
+/*浠庢湁搴忛『搴忚〃涓垹闄ゆ墍鏈夊叾鍊奸噸澶嶇殑鍏冪礌锛屼娇琛ㄤ腑鎵�鏈夊厓绱犵殑鍊煎潎涓嶅悓*/
 #include "sequlist.h"
 bool Delete_Same(SeqList &L){
    if(L.length==0)
@@ -8,17 +8,18 @@ bool Delete_Same(SeqList &L){
        if(L.data[i]!=L.data[j])
            L.data[++i]=L.data[j];
        L.length=i+1;
+   return true;
 }
 int main() {
         SeqList L;
         input(L);
-        printf("原顺序表为：\n");
+        printf("鍘熼『搴忚〃涓猴細\n");
         print(L);
         if (Delete_Same(L)) {
-            printf("删除重复元素后的顺序表为：\n");
+            printf("鍒犻櫎閲嶅鍏冪礌鍚庣殑椤哄簭琛ㄤ负锛歕n");
             print(L);
         } else {
-            printf("顺序表为空，无法删除元素。\n");
+            printf("椤哄簭琛ㄤ负绌猴紝鏃犳硶鍒犻櫎鍏冪礌銆俓n");
         }
         return 0;
     }
